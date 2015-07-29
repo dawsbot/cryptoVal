@@ -34,6 +34,7 @@ function getBTCInWallet(req, res) {
       }
       else {
         console.log('ERROR. Response: ' + response);
+        console.log('textBody: ' + textBody);
       }
     });
   }
