@@ -1,0 +1,28 @@
+{
+  "name": "crypto-value-sms",
+  "version": "0.0.1",
+  "description": "Give a crypto address, get the amount within via sms.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawsonbotsford/crypto-value-sms.git"
+  },
+  "keywords": [
+    "Bitcoin",
+    "SMS",
+    "Twilio"
+  ],
+  "author": "Dawson Botsford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dawsonbotsford/crypto-value-sms/issues"
+  },
+  "homepage": "https://github.com/dawsonbotsford/crypto-value-sms#readme",
+  "dependencies": {
+    "bitcoin-address": "^0.3.0",
+    "body-parser": "^1.13.2",
+    "chain-node": "^3.1.2",
+    "express": "^4.13.1",
+    "twilio": "^2.2.1"
+  }
+}
