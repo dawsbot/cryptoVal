@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Give a crypto address, get the amount within via sms.",
   "main": "app.js",
+  "engines": {
+    "node": "0.12.x",
+    "npm": "2.12.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dawsonbotsford/crypto-value-sms.git"
