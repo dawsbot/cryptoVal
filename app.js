@@ -2,6 +2,7 @@ var express = require('express');
 var Chain = require('chain-node');
 var validator = require('bitcoin-address');
 var converter = require('satoshi-bitcoin');
+var config = require('./config');
 
 var app = express();
 var bodyParser = require('body-parser');
@@ -13,8 +14,8 @@ var twilio = require('twilio');
 var sys = require('sys');
 
 var chain = new Chain({
-  keyId: process.env.CHAIN_API_KEY_ID,
-  keySecret: process.env.CHAIN_API_KEY_SECRET,
+  keyId: config.chainApiKeyId,
+  keySecret: config.chainApiKeySecret,
   blockChain: 'bitcoin'
 });
 
@@ -47,7 +48,6 @@ app.post('/', function(req, res) {
   getBTCInWallet(req, res);
 });
 
-app.set('port', (process.env.PORT || 3000));
-app.listen( app.get('port'), function() {
-       console.log('Express serving on port ' + app.get('port'));
+app.listen( config.port, function() {
+       console.log('Express serving on port ' + config.port);
 });
