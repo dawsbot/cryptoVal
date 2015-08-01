@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/dawsonbotsford/crypto-value-sms#readme",
   "dependencies": {
+    "async": "^1.4.0",
     "bitcoin-address": "^0.3.0",
     "body-parser": "^1.13.2",
     "chain-node": "^3.1.2",
     "connect": "^3.4.0",
     "express": "^4.13.1",
+    "http": "0.0.0",
     "mongodb": "^2.0.39",
     "mongoose": "^4.1.0",
     "satoshi-bitcoin": "^0.2.0",
