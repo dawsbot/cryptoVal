@@ -19,9 +19,13 @@ var makeTwiml = function(req, res) {
 
 exports.getBTCInWallet = function(req, res) {
   var textBody = req.body.Body;
-  if (validator.validate(textBody)) {
+  console.log('in btcwallet. text body: ' + textBody);
+
+  //see if its a valid btc address
+  if (validator.validate(textBody) === true) {
     chain.getAddress(textBody, function(err, response) {
       if (!err){
+        console.log('calling satoshi-bitcoin.toBitcoin with value: ' + response[0].total.balance + '\nThat is of type: ' + typeof(response[0].total.balance));
         makeTwiml('That wallet contains ' + converter.toBitcoin(response[0].total.balance + ' BTC'), res);
       }
       else {

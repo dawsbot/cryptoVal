@@ -2,7 +2,7 @@
   "name": "crypto-value-sms",
   "version": "0.0.1",
   "description": "Give a crypto address, get the amount within via sms.",
-  "main": "app.js",
+  "main": "index.js",
   "engines": {
     "node": "0.12.x",
     "npm": "2.12.x"
@@ -32,7 +32,7 @@
     "http": "0.0.0",
     "mongodb": "^2.0.39",
     "mongoose": "^4.1.0",
-    "satoshi-bitcoin": "^0.2.0",
+    "satoshi-bitcoin": "^0.3.0",
     "twilio": "^2.2.1"
   }
 }
