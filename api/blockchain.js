@@ -12,7 +12,7 @@ var chain = new Chain({
 
 var makeTwiml = function(req, res) {
   var twiml = new twilio.TwimlResponse();
-  twiml.message('That wallet contains ' + req + ' BTC');
+  twiml.message(req);
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
 };
@@ -22,7 +22,7 @@ exports.getBTCInWallet = function(req, res) {
   if (validator.validate(textBody)) {
     chain.getAddress(textBody, function(err, response) {
       if (!err){
-        makeTwiml(converter.toBitcoin(response[0].total.balance), res);
+        makeTwiml('That wallet contains ' + converter.toBitcoin(response[0].total.balance + ' BTC'), res);
       }
       else {
         console.log('ERROR. Response: ' + response);
@@ -31,6 +31,6 @@ exports.getBTCInWallet = function(req, res) {
     });
   }
   else {
-    makeTwiml('Not a valid BTC address. Please try again', res);
+    makeTwiml(req.body.Body + ' is not a valid BTC address. Please try again', res);
   }
 };
