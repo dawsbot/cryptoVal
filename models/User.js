@@ -6,6 +6,10 @@ var userSchema = {
     required: true,
     unique: true
   },
+  lastMessage: {
+    type: String,
+    required: true
+  },
   apiCallsMade: {
     type: Number,
     required: true,
@@ -13,4 +17,4 @@ var userSchema = {
   }
 };
 
-module.export = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);

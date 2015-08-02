@@ -16,5 +16,4 @@ module.exports = {
         { keepAlive: 1, connectTimeoutMS: 30000
         }
     }
-  }
-};
+  }};

@@ -3,10 +3,13 @@ var converter = require('satoshi-bitcoin');
 var config = require('../config');
 var Chain = require('chain-node');
 var validator = require('bitcoin-address');
+var controller = require('../controllers/users');
 
 module.exports = function(request, response){
-  var phone = request.body.From;
-  var input = request.body.Body;
+  var phone = request.body.From || 1;
+  var input = request.body.Body || 'test';
+
+  controller.updateUser(phone, input);
 
   var chain = new Chain({
     keyId: config.chainApiKeyId,
@@ -29,10 +32,10 @@ module.exports = function(request, response){
         console.log('The API blockchainResponse was: ' + blockchainResponse);
         return;
       }
-      respond('That wallet contains ' + converter.toBitcoin(blockchainResponse[0].total.balance) + ' BTC');
+      respond('That bitcoin wallet contains ' + converter.toBitcoin(blockchainResponse[0].total.balance) + ' BTC');
     });
   }
   else {
-    respond(input + ' is not a valid BTC address. Please try again');
+    respond('\"' + input + '\" is not a valid BTC address. Please try again');
   }
-}
+};
