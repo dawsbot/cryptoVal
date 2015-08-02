@@ -1,9 +1,11 @@
 /* eslint no-unused-vars:0 */
 var User = require('../models/User');
 
-exports.create = function() {
+exports.create = function(newNumber) {
   var newUser = new User({
-    phone: 12345678,
+    phone: newNumber,
     apiCallsMade: 1
   });
 };
+
+
