@@ -31,6 +31,7 @@
     "express": "^4.13.1",
     "http": "0.0.0",
     "mongodb": "^2.0.39",
+    "mongodb-uri": "^0.9.7",
     "mongoose": "^4.1.0",
     "satoshi-bitcoin": "^0.3.0",
     "twilio": "^2.2.1"
