@@ -8,8 +8,7 @@ var User = require('../models/User');
  * @param {number} phone The phone number of the user
  * @returns {object|null} newUser The user if they exist, null otherwise
  */
-exports.updateUser = function(phone, input) {
-  var toReturn = 'blah';
+exports.updateUser = function(phone, input, cb) {
 
   function create() {
     console.log('yo');
@@ -29,12 +28,12 @@ exports.updateUser = function(phone, input) {
     }
     if (user) {//user already existed in database
       if (input === 'last') {
+        console.log('\nLAST MESSAGE WAS LAST. last: ' + user.lastMessage);
         input = user.lastMessage;
       }
       user.apiCallsMade += 1;
+      //TODO: only set lastmessage if it's a valid address
       user.lastMessage = input;
-      console.log('incrementing api calls to ' + user.apiCallsMade);
-      console.log('setting last message to ' + user.lastMessage);
     }
     else { //Create new user
       console.log('else, creating new user ');
@@ -46,12 +45,9 @@ exports.updateUser = function(phone, input) {
         console.log('saveError saving to debugger: ' + saveErr);
       }
       else {
-        console.log('person saved successfully');
-        console.log('api calls to ' + user.apiCallsMade);
-        console.log('last message to ' + user.lastMessage);
+        cb(user);
       }
     });
   });
-
 
 };
