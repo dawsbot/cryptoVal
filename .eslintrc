@@ -10,9 +10,7 @@
     "strict": 0,
     "no-multi-spaces": 2,
     "semi-spacing": 2,
-    "no-shadow": 2,
-    "indent": [2, 2],
-    "space-unary-ops": 0
+    "no-shadow": 2
   },
 
   "env": {
