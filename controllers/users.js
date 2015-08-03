@@ -1,6 +1,5 @@
 var User = require('../models/User');
 
-
 /*
  * Get the user from the phone value, if they don't exist, createa  new user. Otherwise increment API calls
  * Set lastMessage either way
