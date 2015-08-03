@@ -11,5 +11,10 @@ Slotted for talks at both [South Bay JavaScript](http://meetu.ps/2L2Sqj), and [C
 Expect heavy development in the next week.
 
 <br>
+## Support
+Currently supports:
+* Bitcoin
+
+<br>
 ## License
 MIT
