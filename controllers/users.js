@@ -26,7 +26,7 @@ exports.updateUser = function(phone, input, cb) {
       throw new Error('could not query in userExists');
     }
     if (user) {//user already existed in database
-      if (input === 'last') {
+      if (input.toLowerCase().trim() === 'last') {
         console.log('\nLAST MESSAGE WAS LAST. last: ' + user.lastMessage);
         input = user.lastMessage;
       }
