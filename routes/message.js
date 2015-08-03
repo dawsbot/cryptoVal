@@ -1,9 +1,7 @@
 var twilio = require('twilio');
-var converter = require('satoshi-bitcoin');
-var config = require('../config');
-var Chain = require('chain-node');
 var validator = require('bitcoin-address');
 var controller = require('../controllers/users');
+var sochain = require('../api/sochain');
 
 module.exports = function(request, response){
   var phone = request.body.From || 1;
@@ -11,12 +9,6 @@ module.exports = function(request, response){
 
   controller.updateUser(phone, input, function(user) {
     var parsedMessage = user.lastMessage;
-
-    var chain = new Chain({
-      keyId: config.chainApiKeyId,
-      keySecret: config.chainApiKeySecret,
-      blockChain: 'bitcoin'
-    });
 
     var respond = function(message) {
       var twiml = new twilio.TwimlResponse();
@@ -27,13 +19,8 @@ module.exports = function(request, response){
 
     //see if its a valid btc address
     if (validator.validate(parsedMessage) === true) {
-      chain.getAddress(parsedMessage, function(err, blockchainResponse) {
-        if (err){
-          console.log('ERROR calling blockchain API with input: ' + parsedMessage);
-          console.log('The API blockchainResponse was: ' + blockchainResponse);
-          return;
-        }
-        respond('That bitcoin wallet contains ' + converter.toBitcoin(blockchainResponse[0].total.balance) + ' BTC');
+      sochain.getAddressInfo('BTC', parsedMessage, function(blockchainResponse) {
+        respond('That bitcoin wallet contains ' + blockchainResponse.data.balance + ' BTC');
       });
     }
     else {

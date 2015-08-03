@@ -25,7 +25,9 @@
     "texting",
     "twilio",
     "currency",
-    "money"
+    "money",
+    "blockchain",
+    "decentralized"
   ],
   "author": "Dawson Botsford",
   "license": "MIT",
@@ -36,11 +38,10 @@
   "dependencies": {
     "bitcoin-address": "^0.3.0",
     "body-parser": "^1.13.2",
-    "chain-node": "^3.1.2",
     "express": "^4.13.1",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^4.1.0",
-    "satoshi-bitcoin": "^0.3.0",
+    "restler": "^3.3.0",
     "twilio": "^2.2.1"
   },
   "devDependencies": {
