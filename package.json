@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Give a crypto address, get the amount within via sms.",
   "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
   "engines": {
     "node": "0.12.x",
     "npm": "2.12.x"
@@ -23,16 +26,17 @@
   },
   "homepage": "https://github.com/dawsonbotsford/cryptoVal#readme",
   "dependencies": {
-    "async": "^1.4.0",
     "bitcoin-address": "^0.3.0",
     "body-parser": "^1.13.2",
     "chain-node": "^3.1.2",
-    "connect": "^3.4.0",
     "express": "^4.13.1",
-    "mongodb": "^2.0.39",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^4.1.0",
     "satoshi-bitcoin": "^0.3.0",
     "twilio": "^2.2.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-eslint": "^17.0.0"
   }
 }
