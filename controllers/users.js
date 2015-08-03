@@ -1,6 +1,5 @@
 var User = require('../models/User');
 
-
 /*
  * Get the user from the phone value, if they don't exist, createa  new user. Otherwise increment API calls
  * Set lastMessage either way
@@ -27,7 +26,7 @@ exports.updateUser = function(phone, input, cb) {
       throw new Error('could not query in userExists');
     }
     if (user) {//user already existed in database
-      if (input === 'last') {
+      if (input.toLowerCase().trim() === 'last') {
         console.log('\nLAST MESSAGE WAS LAST. last: ' + user.lastMessage);
         input = user.lastMessage;
       }
