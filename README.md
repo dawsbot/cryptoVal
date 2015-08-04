@@ -1,4 +1,4 @@
-# cryptoVal
+# cryptoVal [![Build Status](https://travis-ci.org/dawsonbotsford/cryptoVal.svg)](https://travis-ci.org/dawsonbotsford/cryptoVal)
 An SMS tool for accessing Cryptocurrency wallet balances.
 
 <br>
