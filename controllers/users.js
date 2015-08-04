@@ -26,11 +26,11 @@ exports.updateUser = function(phone, input, cb) {
       throw new Error('could not query in userExists');
     }
     if (user) {//user already existed in database
-      if (input.toLowerCase().trim() === 'last') {
+      user.apiCallsMade += 1;
+      if (input.toLowerCase() === 'last') {
         console.log('\nLAST MESSAGE WAS LAST. last: ' + user.lastMessage);
         input = user.lastMessage;
       }
-      user.apiCallsMade += 1;
       //TODO: only set lastmessage if it's a valid address
       user.lastMessage = input;
     }
@@ -43,9 +43,7 @@ exports.updateUser = function(phone, input, cb) {
       if (saveErr) {
         console.log('saveError saving to debugger: ' + saveErr);
       }
-      else {
-        cb(user);
-      }
+      cb(user);
     });
   });
 
