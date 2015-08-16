@@ -1,13 +1,10 @@
 # cryptoVal [![Build Status](https://travis-ci.org/dawsonbotsford/cryptoVal.svg)](https://travis-ci.org/dawsonbotsford/cryptoVal)
-An SMS tool for accessing Cryptocurrency wallet balances. <br>
-
-Text a wallet address to 1-234-564-4668 and you will receive back the current amount held in said wallet.
+An SMS tool for accessing Cryptocurrency wallet balances.
 
 <br>
 ## Demo
-![Screenshot](http://i.imgur.com/UA0JiEal.png) <br>
+Text a wallet address to 1-234-564-4668 and you will receive back the current amount held in said wallet.
 
-<br>
 #### Supported Coins
 * Bitcoin
 * Dogecoin
@@ -20,14 +17,7 @@ Text a wallet address to 1-234-564-4668 and you will receive back the current am
 
 <br>
 ## Future
-* Save shorcuts to your wallets ("1" to access your most common wallet)
-* Support Coinbase (Since they empty your wallet into their cold storage) 
-* Text notifications
-
-<br>
-## Donations
-BTC: 14Gp132H9r2jUEre2TYZuVLTk5VEneBoKX
-
+Slotted for talks at both [South Bay JavaScript](http://meetu.ps/2L2Sqj), and [Cryptolina](http://cryptolina.com/).
 
 <br>
 ## License
