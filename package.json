@@ -1,6 +1,6 @@
 {
   "name": "cryptoVal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Give a crypto address, get the amount within via sms.",
   "main": "index.js",
   "scripts": {
