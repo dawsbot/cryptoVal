@@ -4,7 +4,9 @@
   "description": "Give a crypto address, get the amount within via sms.",
   "main": "index.js",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": "0.12.x",
@@ -42,11 +44,13 @@
     "mongodb-uri": "^0.9.7",
     "mongoose": "^4.1.0",
     "restler": "^3.3.0",
-    "twilio": "^2.2.1"
+    "twilio": "^2.2.1",
+    "snyk": "^1.30.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-eslint": "^17.0.0",
     "grunt-jsonlint": "^1.0.4"
-  }
+  },
+  "snyk": true
 }
